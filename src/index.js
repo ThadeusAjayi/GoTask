@@ -1,16 +1,17 @@
+import React, {useEffect} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import { Platform, StatusBar } from 'react-native';
 import Colors from './colors';
+import Home from './Home';
 import {_navigator} from './NavigationService';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 export default () => {
   useEffect(() => {
     Platform.OS == 'android' && StatusBar.setTranslucent(true);
-    setTimeout(() => {
-      Platform.OS == 'android' && StatusBar.setBackgroundColor('transparent');
-      StatusBar.setBarStyle('dark-content');
-    }, 1000);
+    Platform.OS == 'android' && StatusBar.setBackgroundColor('white');
+    StatusBar.setBarStyle('dark-content');
   }, []);
   
   return (
@@ -36,11 +37,11 @@ export default () => {
           paddingTop: 120,
         }}
         drawerPosition="left">
-        <Drawer.Screen name="Contact Us" component={AppStack} />
-        <Drawer.Screen name="FAQ" component={AppStack} />
-        <Drawer.Screen name="About Us" component={AppStack} />
-        <Drawer.Screen name="Products" component={AppStack} />
-        <Drawer.Screen name="Insurance" component={AppStack} />
+        <Drawer.Screen name="Contact Us" component={Home} />
+        <Drawer.Screen name="FAQ" component={Home} />
+        <Drawer.Screen name="About Us" component={Home} />
+        <Drawer.Screen name="Products" component={Home} />
+        <Drawer.Screen name="Insurance" component={Home} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

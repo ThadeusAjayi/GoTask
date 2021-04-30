@@ -12,11 +12,11 @@ export default (state = initialState, action) => {
         ...state,
         data: action.payload,
       };
-    case MORE_DATA:
-      return {
-        ...state,
-        data: [...state.data, action.payload],
-      };
+    case MORE_DATA: 
+    return {
+      ...state,
+      data: [...state.data, action.payload]
+    }
     case LOADING:
       return {
         ...state,
