@@ -20,28 +20,26 @@ export default () => {
       <Drawer.Navigator
         drawerType={'slide'}
         drawerContentOptions={{
-          activeBackgroundColor: Colors.primary,
+          activeBackgroundColor: Colors.white,
           itemStyle: {
             borderBottomColor: Colors.primaryDark,
-            borderBottomWidth: 2,
+            borderBottomWidth: 1,
           },
           labelStyle: {
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 16,
             marginBottom: 10,
             textAlign: 'right',
           },
         }}
         drawerStyle={{
-          backgroundColor: Colors.primary,
+          backgroundColor: Colors.offWhite,
           paddingTop: 120,
         }}
         drawerPosition="left">
-        <Drawer.Screen name="Contact Us" component={Home} />
-        <Drawer.Screen name="FAQ" component={Home} />
-        <Drawer.Screen name="About Us" component={Home} />
-        <Drawer.Screen name="Products" component={Home} />
-        <Drawer.Screen name="Insurance" component={Home} />
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Discover" component={Home} />
+        <Drawer.Screen name="UGC" component={Home} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -18,6 +18,7 @@ import MovieItem from './MovieItem';
 
 const Home = ({navigation, data, getData, loading}) => {
   const [refresh, setRefresh] = useState(false);
+  console.log(navigation);
   useEffect(() => {
     //api call
     getData(true)
@@ -33,16 +34,19 @@ const Home = ({navigation, data, getData, loading}) => {
       }}
       forceInset={{bottom: 'never'}}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.toggleDrawer()}
-         style={{position: 'absolute', marginLeft: 10}}>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: 18,
-            }}>
-            MENU
-          </Text>
-        </TouchableOpacity>
+        <View style={{position: 'absolute', marginLeft: 10}}>
+          <TouchableOpacity
+            onPress={() => navigation.toggleDrawer()}
+            style={{padding: 8, zIndex: 2}}>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: 18,
+              }}>
+              MENU
+            </Text>
+          </TouchableOpacity>
+        </View>
         <Text
           style={{
             fontWeight: 'bold',
